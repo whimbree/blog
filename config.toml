@@ -1,0 +1,49 @@
+base_url = "https://blog.bspwr.com"
+title = "Bree's Blog"
+
+theme = "terminimal"
+
+compile_sass = true
+
+# enable tags
+taxonomies = [
+    {name = "tags"}
+]
+
+# whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+[markdown]
+# whether to do syntax highlighting
+# theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+highlight_theme = "boron"
+
+[extra]
+accent_color = "pink"
+background_color = "dark"
+menu_items = [
+    # each of these is optional, name and url are required
+    # $BASE_URL is going to be substituted by base_url from configuration
+    {name = "home", url = "$BASE_URL"},
+    {name = "blog", url = "$BASE_URL/blog"},
+    {name = "tags", url = "$BASE_URL/tags"},
+    {name = "archive", url = "$BASE_URL/archive"},
+    {name = "services", url = "https://bspwr.com", newtab = true},
+]
+logo_text = "Bree's Computer Misadventures"
+copyright_html = "© 2022 Bree Spektor | Powered by Zola"
+
+# Whether to show links to earlier and later (aka. higher/lower) posts
+# on each post page (defaults to true).
+enable_post_view_navigation = true
+
+# The text shown at the bottom of a post,
+# before earlier/later post links.
+# Defaults to "Thanks for reading! Read other posts?"
+post_view_navigation_prompt = "Thanks for reading! Read other posts?"
+
+# Use full Hack character set, not just a subset.
+# Switch this to true if you need full unicode support.
+# Defaults to false.
+use_full_hack_font = true
