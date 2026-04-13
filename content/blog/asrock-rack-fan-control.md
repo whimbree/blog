@@ -129,7 +129,7 @@ If you have an X470D4U: use `0xca2`, don't trust `sensors-detect`, and move on w
 
 Now I need to actually *set* fan speeds. `ipmitool` can do this, but the standard IPMI "set fan speed" commands are basically useless because no vendor implements them — everyone has their own OEM extensions under NetFn 0x3a.
 
-First I found a blog post from 2016 describing the command for older ASRock Rack boards:
+First I found [Cole Deck's post on X470D4U fan control](https://www.deck.sh/asrock-ipmi-fan-control/) describing the command for older ASRock Rack boards:
 
 ```bash
 ipmitool raw 0x3a 0x01 AA BB CC DD EE FF 0x00 0x00
@@ -261,7 +261,12 @@ If you have a newer ASRock Rack board with an AST2600 BMC (X570D4U-2L2T, W680D4U
 
 I haven't tested any of this on an AST2600 board, but [Visual-Synthesizer/asrock-rack-fan-control](https://github.com/Visual-Synthesizer/asrock-rack-fan-control) has a README documenting the commands and a Python script that claims to use them.
 
-Can't vouch for the script - haven't run it — but the command reference in the README looks sensible and should at least give you a starting point to poke at your own board.
+Can't vouch for the script — haven't run it — but the command reference in the README looks sensible and should at least give you a starting point to poke at your own board.
+
+## See also
+
+- [Austin's Nerdy Things: Controlling AsrockRack fan speeds via ipmitool & PID loops](https://austinsnerdythings.com/2023/07/26/controlling-asrockrack-cpu-chassis-fan-speeds-via-ipmitool-pid-loops/) — a PID-based approach instead of a linear ramp, targeting CPU/motherboard temps on a 1U Datto NAS. Uses the old `0x3a 0x01` command.
+- [LokiMetaSmith/ASRock-Rack-IPMI-Fan-Controler](https://github.com/LokiMetaSmith/ASRock-Rack-IPMI-Fan-Controler) — a systemd-based fan controller with ini-file config, also using `0x3a 0x01`.
 
 ---
 

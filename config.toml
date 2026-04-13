@@ -26,7 +26,7 @@ menu_items = [
     # each of these is optional, name and url are required
     # $BASE_URL is going to be substituted by base_url from configuration
     {name = "home", url = "$BASE_URL"},
-    {name = "blog", url = "$BASE_URL/blog"},
+    {name = "about", url = "$BASE_URL/about"},
     {name = "tags", url = "$BASE_URL/tags"},
     {name = "archive", url = "$BASE_URL/archive"},
 ]

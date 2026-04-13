@@ -37,5 +37,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/bspwr/blog:${{ github.sha }}
-            ghcr.io/bspwr/blog:latest
+            ghcr.io/whimbree/blog:${{ github.sha }}
+            ghcr.io/whimbree/blog:latest

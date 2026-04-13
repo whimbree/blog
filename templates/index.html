@@ -55,7 +55,15 @@
 
     <div class="content">
         {% block content %}
-        <h2>welcome to my website!</h2>
+        {%- set blog = get_section(path="blog/_index.md") -%}
+        <div class="posts">
+            {%- for page in blog.pages %}
+                <div class="post on-list">
+                    {{ post_macros::header(page=page) }}
+                    {{ post_macros::content(page=page, summary=true) }}
+                </div>
+            {% endfor -%}
+        </div>
         {% endblock content %}
     </div>
 
