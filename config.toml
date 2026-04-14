@@ -31,7 +31,7 @@ menu_items = [
     {name = "archive", url = "$BASE_URL/archive"},
 ]
 logo_text = "Bree's Computer Misadventures"
-copyright_html = "© 2022 Bree Spektor | Powered by Zola"
+copyright_html = "© 2026 Bree Spektor | Powered by Zola"
 
 # Whether to show links to earlier and later (aka. higher/lower) posts
 # on each post page (defaults to true).
